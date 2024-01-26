@@ -25,13 +25,13 @@ document.getElementById('course').innerHTML = `<b>${currentCourse} €</b>`;
 }
 
 async function loadHistoricalCourse(){
-    let url = 'https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_MONTHLY&symbol=BTC&market=CNY&apikey=' + API_KEY;
+    let url = 'https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_MONTHLY&symbol=BTC&market=EUR&apikey=' + API_KEY;
     let response = await fetch(url);
     let responseAsJson = await response.json();
     let historicalCourse = responseAsJson['Time Series (Digital Currency Monthly)'];
     
          for (let i = 0; i < month.length; i++) {
-        let courseEachMonth = Math.round(historicalCourse[month[i]]['1a. open (CNY)']);
+        let courseEachMonth = Math.round(historicalCourse[month[i]]['1a. open (EUR)']);
         course.push(courseEachMonth);
     }
    

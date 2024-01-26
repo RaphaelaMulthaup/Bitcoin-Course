@@ -6,7 +6,7 @@ type: 'line',
 data: {
   labels: month,
   datasets: [{
-    label: 'Bitcoin-Kurs',
+    label: 'Bitcoin-Kurs in Euro',
     data: course,
     borderWidth: 1
   }]
